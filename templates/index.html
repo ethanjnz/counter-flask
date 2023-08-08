@@ -11,13 +11,20 @@
 
 <body>
 
-    <div class="container">
-        <h1>Counter</h1>
-        <p>{{ session.num }}</p>
+    <div class="container mx-auto">
+        <div class="text-center m-3 mx-auto">
+            <h1>Counter</h1>
+            <p>{{ session.num }}</p>
+            <a class="btn btn-info" href="/">Click me</a>
+            <a class="btn btn-info" href="/addtwonum">Click me for 2</a>
+        </div>
         <form action="/adding" method="post" class="container mx-auto text-center">
-            <input name="add" type="submit" class="btn btn-primary"></input>
+            <input name="add" type="text"></input>
+            <button class="btn btn-primary" type="submit">Add Increment</button>
         </form>
-        <a href="/reset"><input name="reset" type="reset" class="btn btn-danger"></input></a>
+        <div class="container mx-auto text-center m-3">
+            <a href="/reset"><input name="reset" type="reset" class="btn btn-danger"></input></a>
+        </div>
     </div>
 
 

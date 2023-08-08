@@ -11,24 +11,21 @@ def index():
     session['num'] += 1
     return render_template('index.html')
 
-
-@app.route('/count')
+@app.route('/addtwonum')
 def count():
     session['num'] += 1
     return redirect('/')
 
 @app.route('/adding', methods = ['POST'])
 def progress():
-    num = int(request.form['add'])
-    session['num'] = num
+    num = int(request.form['add']) - 1
+    session['num'] += num
     return redirect ('/')
 
 @app.route('/reset')
 def clear_session():
-    
     session.clear()
     return redirect('/')
     
-
 if __name__ == '__main__':
     app.run(debug=True)
